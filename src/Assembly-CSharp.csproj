@@ -50,7 +50,10 @@
      <Compile Include="Assets\FPSControl.cs" />
      <Compile Include="Assets\LeanTween.cs" />
      <Compile Include="Assets\Level.cs" />
+     <Compile Include="Assets\LevelDoor.cs" />
+     <Compile Include="Assets\MainMenu.cs" />
      <Compile Include="Assets\NarrationManager.cs" />
+     <Compile Include="Assets\PipeWheel.cs" />
      <Compile Include="Assets\RandomTinting.cs" />
      <Compile Include="Assets\Sentence.cs" />
      <Compile Include="Assets\Shroom.cs" />

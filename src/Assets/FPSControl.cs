@@ -21,6 +21,14 @@ public class FPSControl : MonoBehaviour
     public Transform spawnPoint;
 
     public Level currentLevel;
+    public bool isInteracting = false;
+
+    public static FPSControl instance;
+
+    void Awake()
+    {
+        instance = this;
+    }
 
     void Update()
     {
@@ -49,7 +57,11 @@ public class FPSControl : MonoBehaviour
 
         if (actionInput)
         {
-            currentLevel.GrowPlant();
+            isInteracting = true;
+        }
+        else
+        {
+            isInteracting = false;
         }
 
         // movement from the joystick
@@ -116,6 +128,11 @@ public class FPSControl : MonoBehaviour
 
     private bool HitSomething(Vector3 direction, float proximity)
     {
-        return Physics.Raycast(transform.position, direction, proximity);
+        return Physics.Raycast(transform.position, direction, proximity, 1 - LayerMask.NameToLayer("Platform"));
+    }
+
+    public void GrowPlant()
+    {
+        currentLevel.GrowPlant();
     }
 }
