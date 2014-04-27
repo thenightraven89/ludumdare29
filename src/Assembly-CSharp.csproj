@@ -61,6 +61,7 @@
      <Compile Include="Assets\Terminal.cs" />
      <Compile Include="Assets\TextureSwitcher.cs" />
      <None Include="Assets\Resources\terminalData.xml" />
+     <None Include="Assets\Resources\WaterShader.shader" />
      <None Include="Assets\TextureAmbientAndTint.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

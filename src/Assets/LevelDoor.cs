@@ -3,6 +3,8 @@ using System.Collections;
 
 public class LevelDoor : MonoBehaviour
 {
+    public AudioClip doorClip;
+
     bool used = false;
 
     public GameObject door1;
@@ -27,7 +29,10 @@ public class LevelDoor : MonoBehaviour
             if (FPSControl.instance.isInteracting)
             {
                 used = true;
-                Debug.Log("Finished");
+                collider.enabled = false;
+                FPSControl.instance.EnterDoor();
+                Camera.main.audio.clip = doorClip;
+                Camera.main.audio.Play();
             }
         }
     }

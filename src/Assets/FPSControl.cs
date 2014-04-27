@@ -25,10 +25,16 @@ public class FPSControl : MonoBehaviour
 
     public static FPSControl instance;
 
+    public bool isSafe = false;
+
     void Awake()
     {
         instance = this;
     }
+
+    public AudioClip jumpClip;
+    public AudioClip actionClip;
+
 
     void Update()
     {
@@ -67,7 +73,14 @@ public class FPSControl : MonoBehaviour
         // movement from the joystick
         if (horizontalInput != 0f)
         {
-            transform.Translate(Vector3.right * horizontalInput * horizontalScalar, Space.Self);
+            float sign = Mathf.Sign(horizontalInput);
+
+            bool hit = HitSomething(Vector3.left * -sign, 1f);
+
+            if (!hit)
+            {
+                transform.Translate(Vector3.right * horizontalInput * horizontalScalar, Space.Self);
+            }
         }
 
         // cannot jump while falling
@@ -109,6 +122,7 @@ public class FPSControl : MonoBehaviour
 
     private void Jump()
     {
+        Camera.main.audio.PlayOneShot(jumpClip);
         isJumping = true;
         LeanTween.moveLocalY(gameObject, transform.localPosition.y + jumpHeight, jumpTime, new object[] { "onComplete", "SetFallFlag", "ease", jumpTweenType });
     }
@@ -134,5 +148,15 @@ public class FPSControl : MonoBehaviour
     public void GrowPlant()
     {
         currentLevel.GrowPlant();
+    }
+
+    internal void EnterDoor()
+    {
+        isSafe = true;
+
+        float currentZ = transform.localPosition.z;
+        this.enabled = false;
+        
+        LeanTween.moveLocalZ(gameObject, currentZ + 20f, 5f);
     }
 }

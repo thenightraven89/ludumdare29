@@ -2,9 +2,19 @@
 <ArrayOfEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Entry id="level1">
     <sentences>
-      <Sentence text="This is a text for level 1." />
-      <Sentence text="And this is another one." />
-      <Sentence text="The end." />
+      <Sentence text="[Dr.M] This plant is the key to us all." />
+      <Sentence text="And to think THEY won't let me grow it?" />
+      <Sentence text="I will show them better." />
+      <Sentence text="They have no right to do this!" />
     </sentences>
   </Entry>
+
+  <Entry id="end">
+    <sentences>
+      <Sentence text="Created for #LD48, 29th edition." />
+      <Sentence text="Author: Bogdan Tanasoiu" />
+      <Sentence text="To be continued..." />
+    </sentences>
+  </Entry>
+  
 </ArrayOfEntry>

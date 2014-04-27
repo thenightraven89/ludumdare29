@@ -55,7 +55,10 @@ public class NarrationManager : MonoBehaviour
         else
         {
             textHolder.text = "< missing entry >";
-            currentTerminal.inUse = false;
+            if (currentTerminal != null)
+            {
+                currentTerminal.inUse = false;
+            }
         }
     }
 
