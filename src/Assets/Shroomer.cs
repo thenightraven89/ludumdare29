@@ -13,7 +13,8 @@ public class Shroomer : MonoBehaviour
         {
             if (!transforms[i].CompareTag("Important"))
             {
-                Instantiate(shrooms[Random.Range(0, shrooms.Length)], transforms[i].position, Quaternion.identity);
+                GameObject newObject = Instantiate(shrooms[Random.Range(0, shrooms.Length)], transforms[i].position + transforms[i].localScale.y / 2f * Vector3.up, Quaternion.identity) as GameObject;
+                newObject.transform.parent = transforms[i];
             }
         }
     }
