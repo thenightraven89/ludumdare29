@@ -8,17 +8,21 @@ public class NarrationManager : MonoBehaviour
 {
     public static NarrationManager instance;
 
+    private GUITexture background;
+
     void Awake()
     {
         instance = this;
+        textHolder.text = string.Empty;
+        background = GetComponent<GUITexture>();
+        background.enabled = false;
     }
 
     // dictionary with entries
     private Dictionary<string, Sentence[]> items;
 
     void Start()
-    {
-        textHolder.text = string.Empty;
+    {        
         // load data from file
         TextAsset terminalData = Resources.Load<TextAsset>("terminalData");
         StringReader terminalReader = new StringReader(terminalData.ToString());
@@ -27,9 +31,7 @@ public class NarrationManager : MonoBehaviour
 
         // create dictionary with entries
         items = new Dictionary<string, Sentence[]>();
-
-        Debug.Log(entries[0].sentences.Length);
-
+        
         for (int i = 0; i < entries.Length; i++)
         {
             items.Add(entries[i].id, entries[i].sentences);
@@ -65,7 +67,8 @@ public class NarrationManager : MonoBehaviour
         int letterCount;
         int letterCursor;
 
-        Debug.Log(sentences[phraseCursor]);
+        background.enabled = true;
+        yield return new WaitForSeconds(0.5f);
 
         while (phraseCursor < phraseCount)
         {
@@ -85,6 +88,10 @@ public class NarrationManager : MonoBehaviour
         }
 
         textHolder.text = string.Empty;
+
+        yield return new WaitForSeconds(0.5f);
+
+        background.enabled = false;
 
         currentTerminal.inUse = false;
 
