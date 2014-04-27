@@ -48,6 +48,9 @@
   <ItemGroup>
      <Compile Include="Assets\FPSControl.cs" />
      <Compile Include="Assets\LeanTween.cs" />
+     <Compile Include="Assets\Level.cs" />
+     <Compile Include="Assets\RandomTinting.cs" />
+     <Compile Include="Assets\Shroomer.cs" />
      <None Include="Assets\TextureAmbientAndTint.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

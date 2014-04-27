@@ -20,6 +20,8 @@ public class FPSControl : MonoBehaviour
 
     public Transform spawnPoint;
 
+    public Level currentLevel;
+
     void Update()
     {
         #region camera follow
@@ -35,6 +37,7 @@ public class FPSControl : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         bool jumpInput = Input.GetButtonDown("Fire1");
         bool respawnInput = Input.GetButtonDown("Start");
+        bool actionInput = Input.GetButton("Fire3");
         #endregion
 
         // rerun update if respawn is pressed
@@ -42,6 +45,11 @@ public class FPSControl : MonoBehaviour
         {
             transform.localPosition = spawnPoint.localPosition;
             return;
+        }
+
+        if (actionInput)
+        {
+            currentLevel.GrowPlant();
         }
 
         // movement from the joystick
