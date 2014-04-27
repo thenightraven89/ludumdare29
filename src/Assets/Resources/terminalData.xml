@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfEntry xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Entry id="level1">
+    <sentences>
+      <Sentence text="This is a text for level 1." />
+      <Sentence text="And this is another one." />
+      <Sentence text="The end." />
+    </sentences>
+  </Entry>
+</ArrayOfEntry>

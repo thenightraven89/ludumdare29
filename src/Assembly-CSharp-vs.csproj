@@ -46,11 +46,17 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Entry.cs" />
      <Compile Include="Assets\FPSControl.cs" />
      <Compile Include="Assets\LeanTween.cs" />
      <Compile Include="Assets\Level.cs" />
+     <Compile Include="Assets\NarrationManager.cs" />
      <Compile Include="Assets\RandomTinting.cs" />
+     <Compile Include="Assets\Sentence.cs" />
+     <Compile Include="Assets\Shroom.cs" />
      <Compile Include="Assets\Shroomer.cs" />
+     <Compile Include="Assets\Terminal.cs" />
+     <None Include="Assets\Resources\terminalData.xml" />
      <None Include="Assets\TextureAmbientAndTint.shader" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
