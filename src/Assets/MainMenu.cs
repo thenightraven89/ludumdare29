@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
 
     void Awake()
     {
+        Application.targetFrameRate = 60;
         curtain.material.SetColor("_TintColor", new Color(0f, 0f, 0f, 0f));
     }
 
