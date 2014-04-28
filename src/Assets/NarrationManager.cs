@@ -96,8 +96,10 @@ public class NarrationManager : MonoBehaviour
 
         background.enabled = false;
 
-        currentTerminal.inUse = false;
-
+        if (currentTerminal != null)
+        {
+            currentTerminal.inUse = false;
+        }
         yield return null;
     }
 }
